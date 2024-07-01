@@ -1,38 +1,137 @@
-.App {
+#tab-tab-Upcoming,
+#tab-tab-All {
+  max-width: 200px !important;
+  margin: auto;
+}
+
+.nav-link,
+.nav-link:focus,
+.nav-link:hover {
+  color: var(--text-color) !important;
+}
+
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+
+.nav-link.active {
+  color: var(--primary-color) !important;
+}
+
+.live-now-series {
+  color: #F24E1E;
+  font-family: Lato;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: 0em;
+}
+
+.payment-successful {
+  color: #0D1015;
+  font-family: Lato;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0em;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+.coursal-indicator {
+  background-color: #CDCFD3;
+  height: 6px;
+  width: 6px;
+  border-radius: 50%;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.coursal-indicator-active {
+  Background-Color: #0D1015;
+  height: 7px;
+  width: 7px;
+  border-radius: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.login-coursal-heading {
+  font-family: Lato;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 36px;
+  letter-spacing: 0px;
+  color: #0D1015
+}
+
+.login-coursal-subheading {
+  font-family: Lato;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 28px;
+  letter-spacing: 0px;
+  color: #0D1015
+}
+
+
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.warn {
+  font-family: Lato;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0em;
+  color: #CC2C2C;
+}
+
+.MJXc-display {
+  display: inline !important;
+}
+
+
+button#message-modal-class-1:hover {
+  color: white !important;
+  background-color: red !important;
+  border-color: red !important;
+}
+
+
+button#message-modal-class-2:hover {
+  color: black !important;
+  background-color: white !important;
+  border-color: white !important;
+}
+
+
+.scholarship-offer {
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  /* background-color: #5F46E3; */
+  color: #5F46E3;
+  font-size: x-large;
+  font-weight: bold;
 }
 
-.App-link {
-  color: #61dafb;
+@keyframes zoom {
+  0% { font-size: 22px; }
+  50% { font-size: 26px; } /* Adjust the size for zoom-in effect */
+  100% { font-size: 22px; }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.zoom-text {
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  height: 100px;
+  /* animation: zoom 3s infinite alternate; Change the duration as needed */
+}
+
+.zoom-text:hover {
+  color: blue; /* Change color on hover */
 }

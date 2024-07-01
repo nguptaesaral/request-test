@@ -1,0 +1,488 @@
+/*------------------------------------------------------------------------------Quiz Classes----------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+:root {
+  --Primary-Font-Family: 'Lato', sans-serif;
+  /* --Primary-Background-Color: black; */
+  --Primary-Background-Color: #F8F8F8;
+  --second-primary-color: #fff;
+  --primary-color: #5F46E3;
+  --ChaptePageButtons-color: #333A47;
+  --error-color: #CC2C2C;
+  --text-color: #0D1015;
+  --SubjectIndexTab-color: #060D21;
+  --Form-heading1: #0D1015;
+  --Form-heading2: #0D1015;
+  --Form-heading3: #333A47;
+  --green-color: #008445;
+  --green-background-color: #D9F6E8;
+
+  --warning-font-color: #CC2C2C;
+
+  --Form-heading1-font-size: 32px;
+  --Form-heading2-font-size: 24px;
+  --Form-heading3-font-size: 16px;
+  --Form-heading4-font-size: 14px;
+  --Form-heading5-font-size: 12px;
+  --Form-heading6-font-size: 18px;
+
+  --quiz-default-button-color: #E6E7E9;
+  --quiz-question-label: #6E7191;
+}
+
+#Quiz button.btn:first-child:active,
+#Quiz :not(.btn-check)+.btn:active,
+#Quiz button.btn:hover {
+  color: var(--second-primary-color) !important;
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+
+/*------------------------------------------------------Utilities---------------------------------------------------- */
+.reomve-button-css {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: inherit;
+  cursor: pointer;
+  overflow: visible;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 100%;
+  color: var(--Form-heading1)
+}
+
+.reomve-button-css:disabled {
+  color: var(--ChaptePageButtons-color)
+}
+
+.FileUpload {
+  transform: scale(1);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.FileUpload:hover {
+  transform: scale(1.2);
+}
+
+.Centering {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Header {
+  height: 10vh;
+  max-height: 60px;
+}
+
+.isPhoneAndTab {
+  display: none !important;
+}
+
+.NotDisplay {
+  display: none;
+}
+
+.isDesktop {
+  display: block;
+}
+
+div .dropdown-menu.dropdown-menu-white {
+  display: none;
+}
+
+.Background {
+  background-color: var(--second-primary-color);
+}
+
+.Background-Color {
+  background-color: var(--Primary-Background-Color);
+}
+
+.Background-Color-1 {
+  background-color: #F3F3F4;
+}
+
+.Background-Overlay {
+  background: rgba(13, 16, 21, 0.43);
+}
+
+.Horizontal-gap {
+  margin-left: 10px;
+}
+
+.Vertical-gap {
+  margin-top: 10px;
+}
+
+.Psudo-Button {
+  cursor: pointer;
+}
+
+.custom-padding {
+  padding: 20px;
+}
+
+.custom-margin-left {
+  margin-left: 20px;
+}
+
+.custom-margin-right {
+  margin-right: 10px;
+}
+
+
+.scrolling-wrapper {
+  overflow-x: auto;
+}
+
+.menu-item-active {
+  background-color: var(--Primary-Background-Color);
+  color: var(--primary-color) !important;
+  border-radius: 0px 32px 32px 0px;
+}
+
+.active-item {
+  /* position: relative; */
+  background-color: var(--primary-color);
+  z-index: 1;
+  width: 4px;
+  /* margin-right: 20px;
+  margin-left: -20px; */
+  width: 4px;
+  height: 48px;
+  flex-shrink: 0;
+}
+
+.Primary-Button-Back-Color {
+  background-color: var(--Primary-but-color);
+  width: 100%,
+}
+
+.Custom-button-ripple {
+  position: relative;
+  overflow: hidden;
+  transition: background 400ms;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  outline: 0;
+  border: 0;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+span.ripple-secondary {
+  position: absolute;
+  /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: #F3F3F4;
+}
+
+span.ripple-primary {
+  position: absolute;
+  /* The absolute position we mentioned earlier */
+  border-radius: 50%;
+  transform: scale(0);
+  animation: ripple 600ms linear;
+  background-color: #100E27;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+#formBasicEmail,
+#formBasicEmail:focus {
+  outline: none !important;
+  outline-offset: none !important;
+  box-shadow: none !important;
+  border: 2px solid var(--primary-color);
+}
+
+h2 .accordion-button:not(.collapsed) {
+  color: black !important;
+  background-color: var(--second-primary-color) !important;
+  box-shadow: none !important;
+}
+
+.BoxShadow {
+  position: relative;
+  /* z-index: 12; */
+  box-shadow: 0px 1px 4px 0px rgba(51, 58, 71, 0.14);
+}
+
+.BoxShadowUpper {
+  position: relative;
+  /* z-index: 12; */
+  box-shadow: 0px -4px 4px 0px rgb(0 0 0 / 21%);
+}
+
+.MainText {
+  color: var(--primary-color) !important;
+}
+
+/*---------------------------------- Custom ScrollBar Styling -----------------------*/
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  top: -222px;
+  left: 477px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  /*box-shadow: inset 0 0 5px grey; */
+  border-radius: 10px;
+  background-color: var(--Primary-Background-Color);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #E6E7E9;
+  border-radius: 30px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c7cbd1;
+}
+
+/*------------------------------------------------------Input Box Button Remove---------------------------------------------------- */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+/* #practice img{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+#quiz img{
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+} */
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.header {
+  flex-shrink: 0;
+  padding: 10px;
+  padding-bottom: 0px;
+  box-shadow: 0px 0px 10px 0px;
+  z-index: 9;
+
+}
+
+/* .MathJax_CHTML, .mjx-numerator, .mjx-denominator {
+  font-size: 1rem !important;
+} */
+
+.horizontal-scroll {
+  display: flex;
+  overflow-x: scroll;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.horizontal-scroll button {
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
+.content {
+  flex-grow: 1;
+  overflow-y: scroll;
+  padding: 10px;
+  padding-bottom: 70px;
+}
+
+.vertical-scroll {
+  height: 1400px;
+  /* padding-bottom: 60px; */
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  /* height: 50px; */
+  /* line-height: 50px; */
+  position: fixed;
+  bottom: 0;
+  background-color: #FFF;
+  /* position: fixed;
+  width: -webkit-fill-available; */
+  box-shadow: 0px 0px 5px 0px;
+  z-index: 9;
+}
+
+img {
+  max-width: -webkit-fill-available;
+  /* height: auto;
+  min-height: 25px; */
+}
+
+.input {
+  padding: 6px;
+  width: -webkit-fill-available;
+  border-color: #6E7191;
+  border-radius: 8px;
+  font-size: large;
+  outline: none;
+}
+
+.opt {
+  display: flex;
+  padding: 15px 0 0 15px;
+  align-items: flex-start;
+  border: 2px solid #FFF;
+  border-radius: 15px;
+}
+
+.opt-selected {
+  border: 2px solid #5F46E3;
+
+}
+
+.opt-correct {
+  border: 2px solid #008444;
+}
+
+.opt-incorrect {
+  border: 2px solid #CC2C2C;
+}
+
+.index-btn {
+  display: flex;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 50%;
+  place-content: center;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.meta-data {
+  color: #6E7191;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.new-btn-outline {
+  border: 2px solid rgb(95, 70, 227);
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  padding: 0.25rem 0.5rem;
+  color: rgb(95, 70, 227);
+  font-weight: bold;
+}
+
+.new-btn-outline[disabled] {
+  opacity: 0.5;
+  border: 2px solid rgb(51, 58, 71);
+  color: rgb(51, 58, 71)
+}
+
+
+.solve-cast img {
+  filter: invert(100%);
+}
+
+
+
+.insights .accordion {
+  background-color: rgba(200,200,200,0.25);
+  /* padding: 10px; */
+  border-radius:8px;
+}
+
+
+
+#quiz-wrong-message {
+  color: rgb(95, 70, 227) !important;
+  text-decoration: underline !important;
+  cursor: pointer;
+}
+
+
+/* div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+div:hover {
+  width: 300px;
+} */
+
+.offcanvas-bottom{
+  height: auto !important;
+}
+
+/* 
+{
+  0.5rem 1rem rgba(0,0,0,.15)!important
+} */
+
+.currentAccordian:hover {
+  cursor: pointer;
+  box-shadow:  0px 1px 8px -5px black!important;
+}
